@@ -1,4 +1,8 @@
 #include <iostream>
+#include "server.h"
+#include "client.h"
+
+using namespace dyr;
 
 int main(int argc, char* argv[])
 {
