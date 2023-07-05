@@ -1,0 +1,7 @@
+#ifndef DYR_CONFIG_H
+#define DYR_CONFIG_H
+
+#define DYR_VERSION_MAJOR @dyredis_VERSION_MAJOR@
+#define DYR_VERSION_MINOR @dyredis_VERSION_MINOR@
+
+#endif
