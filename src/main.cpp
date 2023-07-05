@@ -12,5 +12,17 @@ int main(int argc, char* argv[])
               << "."
               << DYR_VERSION_MINOR
               << std::endl;
-    std::cout << "Hello World" << std::endl;
+
+    if (strcmp(argv[1], "-s") == 0) {
+        std::cout << "Starting the server..." << std::endl;
+        Server server;
+        return server.start();
+    } else if (strcmp(argv[1], "-s") == 0) {
+        std::cout << "Starting the client..." << std::endl;
+        Client client;
+        return client.send();
+    } else {
+        std::cout << "Unknown options" << std::endl;
+        return 1;
+    }
 }

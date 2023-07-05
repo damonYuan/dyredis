@@ -7,8 +7,10 @@ namespace dyr {
     class Client {
     private:
         static const std::string TYPE;
+        void die(const char *msg);
     public:
         std::string getName();
+        int send();
         ~Client();
     };
 }
