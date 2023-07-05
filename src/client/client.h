@@ -9,6 +9,7 @@ namespace dyr {
         static const std::string TYPE;
     public:
         std::string getName();
+        ~Client();
     };
 }
 

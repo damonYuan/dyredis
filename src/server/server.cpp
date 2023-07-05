@@ -7,8 +7,6 @@ namespace dyr {
         return "DY_REDIS_SERVER";
     }
 
-    Server::~Server() {
-
-    }
+    Server::~Server() {}
 }
 
