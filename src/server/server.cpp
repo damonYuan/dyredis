@@ -53,7 +53,7 @@ namespace dyr {
         addr.sin_family = AF_INET;
         addr.sin_port = ntohs(1234);
         addr.sin_addr.s_addr = ntohl(0);    // wildcard address 0.0.0.0
-        int rv = bind(fd, (const sockaddr *)&addr, sizeof(addr));
+        int rv = bind(fd, (const sockaddr *) &addr, sizeof(addr));
         if (rv) {
             die("bind()");
         }
@@ -68,7 +68,7 @@ namespace dyr {
             // accept
             struct sockaddr_in client_addr = {};
             socklen_t socklen = sizeof(client_addr);
-            int connfd = accept(fd, (struct sockaddr *)&client_addr, &socklen);
+            int connfd = accept(fd, (struct sockaddr *) &client_addr, &socklen);
             if (connfd < 0) {
                 continue;   // error
             }

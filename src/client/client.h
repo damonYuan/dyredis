@@ -3,14 +3,19 @@
 
 #include <string>
 
+using namespace std;
 namespace dyr {
     class Client {
     private:
-        static const std::string TYPE;
+        static const string TYPE;
+
         void die(const char *msg);
+
     public:
-        std::string getName();
+        string getName();
+
         int send();
+
         ~Client();
     };
 }

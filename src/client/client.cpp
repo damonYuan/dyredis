@@ -9,10 +9,11 @@
 #include <netinet/ip.h>
 #include "client.h"
 
+using namespace std;
 namespace dyr {
-    const std::string Client::TYPE = "CLIENT";
+    const string Client::TYPE = "CLIENT";
 
-    std::string Client::getName() {
+    string Client::getName() {
         return "DY_REDIS_CLIENT";
     }
 
@@ -32,7 +33,7 @@ namespace dyr {
         addr.sin_family = AF_INET;
         addr.sin_port = ntohs(1234);
         addr.sin_addr.s_addr = ntohl(INADDR_LOOPBACK);  // 127.0.0.1
-        int rv = connect(fd, (const struct sockaddr *)&addr, sizeof(addr));
+        int rv = connect(fd, (const struct sockaddr *) &addr, sizeof(addr));
         if (rv) {
             die("connect");
         }
