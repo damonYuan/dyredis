@@ -1,6 +1,14 @@
 README
 ====
 
+# Project Structure
+
+- dyredis
+  - dyr
+    - dyr_client
+    - dyr_server
+  - dyr_test
+
 # Build Commands
 
 ```
@@ -17,6 +25,7 @@ dyredis
 ```
 
 # Test
+[googletest](https://github.com/google/googletest) is used.
 ```
 cmake -S . -B build; cmake --build build --target test
 cd build

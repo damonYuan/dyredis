@@ -15,7 +15,7 @@ set(CMAKE_CXX_STANDARD 20)
 
 # https://stackoverflow.com/questions/47697761/cmake-run-time-error-dyld-library-not-loaded-for-dynamically-linked-resource
 set(CMAKE_INSTALL_RPATH_USE_LINK_PATH ON)
-set(MAIN_PROJECT_NAME dyredis_prj)
+set(MAIN_PROJECT_NAME dyredis)
 
 project(${MAIN_PROJECT_NAME})
 
@@ -23,6 +23,7 @@ enable_testing()
 
 add_subdirectory(src)
 add_subdirectory(test)
+add_subdirectory(libs/googletest)
 
 
 message(PROJECT_SOURCE_DIR="${PROJECT_SOURCE_DIR}")

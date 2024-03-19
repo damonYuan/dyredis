@@ -1,19 +1,20 @@
 # gtest
-include(FetchContent)
-FetchContent_Declare(
-        googletest
-        URL https://github.com/google/googletest/archive/03597a01ee50ed33e9dfd640b249b4be3799d395.zip
-)
-FetchContent_MakeAvailable(googletest)
+#include(FetchContent)
+#FetchContent_Declare(
+#        googletest
+#        URL https://github.com/google/googletest/archive/03597a01ee50ed33e9dfd640b249b4be3799d395.zip
+#)
+#FetchContent_MakeAvailable(googletest)
 
-set(MAIN_TEST_PROJECT_NAME dyredis_test)
+set(MAIN_TEST_PROJECT_NAME dyr_test)
 set(MAIN_TEST_SOURCE_DIR ${PROJECT_SOURCE_DIR}/test)
 set(MAIN_TEST_COMPILER_FLAGS ${MAIN_TEST_PROJECT_NAME}_compiler_flags)
 
 add_library(${MAIN_TEST_COMPILER_FLAGS} INTERFACE)
-target_compile_features(${MAIN_TEST_COMPILER_FLAGS} INTERFACE cxx_std_11)
+target_compile_features(${MAIN_TEST_COMPILER_FLAGS} INTERFACE cxx_std_20)
 
-include(GoogleTest)
+target_link_libraries(dyr_test gtest)
+include_directories(${PROJECT_SOURCE_DIR}/libs/googletest/googletest/include)
 
 add_executable(${MAIN_TEST_PROJECT_NAME}
         ${MAIN_TEST_SOURCE_DIR}/main_test.cpp
