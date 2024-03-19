@@ -21,4 +21,9 @@ dyredis
 cmake -S . -B build; cmake --build build --target test
 cd build
 ctest
-``
+```
+
+# TODO
+
+1. using the [libev](https://github.com/enki/libev)
+
