@@ -13,9 +13,6 @@ set(MAIN_TEST_COMPILER_FLAGS ${MAIN_TEST_PROJECT_NAME}_compiler_flags)
 add_library(${MAIN_TEST_COMPILER_FLAGS} INTERFACE)
 target_compile_features(${MAIN_TEST_COMPILER_FLAGS} INTERFACE cxx_std_20)
 
-target_link_libraries(dyr_test gtest)
-include_directories(${PROJECT_SOURCE_DIR}/libs/googletest/googletest/include)
-
 add_executable(${MAIN_TEST_PROJECT_NAME}
         ${MAIN_TEST_SOURCE_DIR}/main_test.cpp
         ${MAIN_TEST_SOURCE_DIR}/server_test.cpp
@@ -34,4 +31,4 @@ target_include_directories(${MAIN_TEST_PROJECT_NAME} PRIVATE
         ${PROJECT_SOURCE_DIR}/src/client
         )
 
-gtest_discover_tests(${MAIN_TEST_PROJECT_NAME})
+#gtest_discover_tests(${MAIN_TEST_PROJECT_NAME})

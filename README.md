@@ -9,6 +9,8 @@ README
     - dyr_server
   - dyr_test
 
+[C++ project setup with CMake & unit tests (google test)](https://raymii.org/s/tutorials/Cpp_project_setup_with_cmake_and_unit_tests.html)
+
 # Build Commands
 
 ```

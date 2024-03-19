@@ -25,6 +25,11 @@ add_subdirectory(src)
 add_subdirectory(test)
 add_subdirectory(libs/googletest)
 
+set(GTEST_BINARY_DIR ${PROJECT_SOURCE_DIR}/libs/googletest/googletest)
+include_directories(${PROJECT_SOURCE_DIR}/libs/googletest/include)
+add_library(gtest STATIC ${GTEST_BINARY_DIR}/src/gtest-all.cc)
+set_target_properties(gtest PROPERTIES ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+target_link_libraries(dyr_test gtest)
 
 message(PROJECT_SOURCE_DIR="${PROJECT_SOURCE_DIR}")
 message(CMAKE_SOURCE_DIR="${CMAKE_SOURCE_DIR}")
