@@ -10,8 +10,14 @@
 #include "server.h"
 
 namespace dyr {
-    const std::string Server::getName() const {
-        return "DY_REDIS_SERVER";
+
+    const std::string Server::TYPE = "SERVER";
+    const std::string Server::NAME = "DY_REDIS_SERVER";
+
+    Server::Server() = default;
+
+    const std::string& Server::getName() {
+        return NAME;
     }
 
     void Server::msg(const char *msg) {

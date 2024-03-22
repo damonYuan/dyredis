@@ -11,10 +11,14 @@
 
 using namespace std;
 namespace dyr {
-    const string Client::TYPE = "CLIENT";
 
-    string Client::getName() {
-        return "DY_REDIS_CLIENT";
+    const std::string Client::TYPE = "CLIENT";
+    const std::string Client::NAME = "DY_REDIS_CLIENT";
+
+    Client::Client() = default;
+
+    const string& Client::getName() {
+        return NAME;
     }
 
     void Client::die(const char *msg) {

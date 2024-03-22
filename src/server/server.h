@@ -8,17 +8,19 @@ namespace dyr {
     public:
         Server();
 
-        const std::string getName() const;
+        [[nodiscard]] static const std::string &getName();
 
         int start();
 
         ~Server();
+
     private:
         static const std::string TYPE;
+        static const std::string NAME;
 
-        void msg(const char *msg);
+        static void msg(const char *msg);
 
-        void die(const char *msg);
+        static void die(const char *msg);
 
         void doSomething(int connfd);
     };

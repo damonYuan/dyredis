@@ -6,17 +6,20 @@
 using namespace std;
 namespace dyr {
     class Client {
-    private:
-        static const string TYPE;
-
-        void die(const char *msg);
-
     public:
-        string getName();
+        Client();
 
-        int send();
+        [[nodiscard]] static const std::string &getName();
+
+        static int send();
 
         ~Client();
+
+    private:
+        static const string TYPE;
+        static const string NAME;
+
+        static void die(const char *msg);
     };
 }
 
