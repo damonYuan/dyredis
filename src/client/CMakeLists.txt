@@ -1,2 +1,4 @@
-set(SERVER_LIB_NAME dyr_client)
-add_library(${SERVER_LIB_NAME} client.cpp)
+set(CLIENT_LIB_NAME dyr_client)
+file(GLOB_RECURSE SOURCES LIST_DIRECTORIES true *.h *.cpp)
+set(SOURCES ${SOURCES})
+add_library(${CLIENT_LIB_NAME}_lib STATIC ${SOURCES})
