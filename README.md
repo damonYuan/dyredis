@@ -3,11 +3,21 @@ README
 
 # Project Structure
 
-- dyredis
-  - dyr
-    - dyr_client
-    - dyr_server
-  - dyr_test
+```
+.
+├── CMakeLists.txt
+├── README.md
+├── lib
+├── src
+│   ├── CMakeLists.txt
+│   ├── Config.h.in
+│   ├── client
+│   │   └── CMakeLists.txt
+│   └── server
+│       └── CMakeLists.txt
+└── test
+    └── CMakeLists.txt
+```
 
 [C++ project setup with CMake & unit tests (google test)](https://raymii.org/s/tutorials/Cpp_project_setup_with_cmake_and_unit_tests.html)
 
