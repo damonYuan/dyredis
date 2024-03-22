@@ -19,8 +19,6 @@ README
     └── CMakeLists.txt
 ```
 
-[C++ project setup with CMake & unit tests (google test)](https://raymii.org/s/tutorials/Cpp_project_setup_with_cmake_and_unit_tests.html)
-
 # Build Commands
 
 ```
@@ -33,11 +31,11 @@ cmake --build build --clean-first
 cmake --build build --target test
 cmake --install build --prefix ~/cbin
 // or you can find the binary in build folder
-dyredis
+dyr
 ```
 
 # Test
-[googletest](https://github.com/google/googletest) is used.
+[googletest](https://github.com/google/googletest) is used following [C++ project setup with CMake & unit tests (google test)](https://raymii.org/s/tutorials/Cpp_project_setup_with_cmake_and_unit_tests.html).
 ```
 cmake -S . -B build; cmake --build build --target test
 cd build
