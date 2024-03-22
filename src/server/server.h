@@ -5,6 +5,14 @@
 
 namespace dyr {
     class Server {
+    public:
+        Server();
+
+        const std::string getName() const;
+
+        int start();
+
+        ~Server();
     private:
         static const std::string TYPE;
 
@@ -12,14 +20,7 @@ namespace dyr {
 
         void die(const char *msg);
 
-        void do_something(int connfd);
-
-    public:
-        std::string getName();
-
-        int start();
-
-        ~Server();
+        void doSomething(int connfd);
     };
 }
 

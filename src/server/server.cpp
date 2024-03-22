@@ -10,9 +10,7 @@
 #include "server.h"
 
 namespace dyr {
-    const std::string Server::TYPE = "SERVER";
-
-    std::string Server::getName() {
+    const std::string Server::getName() const {
         return "DY_REDIS_SERVER";
     }
 
@@ -26,7 +24,7 @@ namespace dyr {
         abort();
     }
 
-    void Server::do_something(int connfd) {
+    void Server::doSomething(int connfd) {
         char rbuf[64] = {};
         ssize_t n = read(connfd, rbuf, sizeof(rbuf) - 1);
         if (n < 0) {
@@ -73,7 +71,7 @@ namespace dyr {
                 continue;   // error
             }
 
-            do_something(connfd);
+            doSomething(connfd);
             close(connfd);
         }
 
