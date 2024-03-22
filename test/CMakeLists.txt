@@ -4,5 +4,9 @@ set(SOURCES ${TEST_SOURCES})
 
 add_executable(${MAIN_TEST_PROJECT_NAME} ${TEST_SOURCES})
 add_test(NAME ${MAIN_TEST_PROJECT_NAME} COMMAND ${MAIN_TEST_PROJECT_NAME})
-target_link_libraries(${MAIN_TEST_PROJECT_NAME} PUBLIC dyr_lib gtest)
+target_link_libraries(${MAIN_TEST_PROJECT_NAME} PUBLIC dyr_server_lib dyr_client_lib gtest)
+
+list(APPEND EXTRA_INCLUDES "${MAIN_APP_SOURCE_DIR}/client")
+list(APPEND EXTRA_INCLUDES "${MAIN_APP_SOURCE_DIR}/server")
+target_include_directories(${MAIN_TEST_PROJECT_NAME} PRIVATE ${PROJECT_BINARY_DIR} ${EXTRA_INCLUDES})
 

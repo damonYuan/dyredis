@@ -19,7 +19,8 @@ set(MAIN_PROJECT_NAME dyredis)
 
 project(${MAIN_PROJECT_NAME})
 
-include_directories(src)
+include_directories(src/client)
+include_directories(src/server)
 
 add_subdirectory(src)
 add_subdirectory(test)

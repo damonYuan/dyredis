@@ -13,11 +13,16 @@ int main(int argc, char* argv[])
               << DYR_VERSION_MINOR
               << std::endl;
 
-    if (argc == 1 && strcmp(argv[1], "-s") == 0) {
+    if (argc != 2) {
+        std::cout << "Please specify an option: -c for client or -s for server" << std::endl;
+        return 1;
+    }
+
+    if (argc == 2 && strcmp(argv[1], "-s") == 0) {
         std::cout << "Starting the server..." << std::endl;
         Server server;
         return server.start();
-    } else if (argc == 1 && strcmp(argv[1], "-c") == 0) {
+    } else if (argc == 2 && strcmp(argv[1], "-c") == 0) {
         std::cout << "Starting the client..." << std::endl;
         Client client;
         return client.send();

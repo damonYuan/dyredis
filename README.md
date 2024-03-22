@@ -28,7 +28,7 @@ cmake -S . -B build; cmake --build build --clean-first; cmake --build build --ta
 ```
 or
 ```
-cmake -S . -B build
+cmake -S . -B build -DCMAKE_BUILD_TYPE=Debug -G "Unix Makefiles"
 cmake --build build --clean-first
 cmake --build build --target test
 cmake --install build --prefix ~/cbin
@@ -47,4 +47,5 @@ ctest
 # TODO
 
 1. using the [libev](https://github.com/enki/libev)
+2. integrate with boost [std::string to lowercase or uppercase in C++](https://raymii.org/s/snippets/std_string_to_lowercase_or_uppercase_in_cpp.html)
 
