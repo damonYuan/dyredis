@@ -20,6 +20,10 @@ namespace dyr {
         return NAME;
     }
 
+    const std::string& Server::getType() {
+        return TYPE;
+    }
+
     void Server::msg(const char *msg) {
         fprintf(stderr, "%s\n", msg);
     }

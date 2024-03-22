@@ -21,6 +21,10 @@ namespace dyr {
         return NAME;
     }
 
+    const string& Client::getType() {
+        return TYPE;
+    }
+
     void Client::die(const char *msg) {
         int err = errno;
         fprintf(stderr, "[%d] %s\n", err, msg);

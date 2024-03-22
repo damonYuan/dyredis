@@ -10,6 +10,7 @@ namespace dyr {
         Client();
 
         [[nodiscard]] static const std::string &getName();
+        [[nodiscard]] static const std::string &getType();
 
         static int send();
 

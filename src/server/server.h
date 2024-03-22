@@ -9,6 +9,7 @@ namespace dyr {
         Server();
 
         [[nodiscard]] static const std::string &getName();
+        [[nodiscard]] static const std::string &getType();
 
         int start();
 
