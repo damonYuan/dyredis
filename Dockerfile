@@ -7,6 +7,7 @@ RUN apt update \
     build-essential  \
     gcc \
     g++ \
+    clang \
     cmake  \
     gdb  \
     gdbserver  \
