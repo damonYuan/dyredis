@@ -2,6 +2,7 @@
 #include "Config.h"
 #include "server/server.h"
 #include "client/client.h"
+#include <string.h>
 
 using namespace dyr;
 
