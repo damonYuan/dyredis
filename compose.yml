@@ -1,0 +1,14 @@
+services:
+  dyredis:
+    container_name: dev
+    build: # use the Dockerfile in the current directory
+      context: .
+      dockerfile: Dockerfile
+    security_opt: # options needed for gdb debugging
+      - seccomp:unconfined
+      - apparmor:unconfined
+    ports:
+      - "2222:22" # SSH
+      - "7777:7777" # GDB Server
+    volumes:
+      - ${PWD}:/home/dev/dyredis
