@@ -7,8 +7,8 @@ set(CMAKE_C_COMPILER "clang")
 set(CMAKE_CXX_COMPILER "clang++")
 
 # Set the desired compiler flags
-set(CMAKE_C_FLAGS "-Wall -Wextra")
-set(CMAKE_CXX_FLAGS "-Wall -Wextra")
+set(CMAKE_C_FLAGS "-Wall -Wextra -Og -g")
+set(CMAKE_CXX_FLAGS "-Wall -Wextra -Og -g")
 
 # Set the C++ standard to C++20
 set(CMAKE_CXX_STANDARD 20)

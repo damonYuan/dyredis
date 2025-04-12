@@ -1,13 +1,14 @@
+#include "client.h"
+
+#include <arpa/inet.h>
+#include <errno.h>
+#include <netinet/ip.h>
 #include <stdint.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <stdio.h>
-#include <errno.h>
-#include <unistd.h>
-#include <arpa/inet.h>
 #include <sys/socket.h>
-#include <netinet/ip.h>
-#include "client.h"
+#include <unistd.h>
 
 using namespace std;
 namespace dyr {
@@ -17,13 +18,9 @@ namespace dyr {
 
     Client::Client() = default;
 
-    const string& Client::getName() {
-        return NAME;
-    }
+    const string &Client::getName() { return NAME; }
 
-    const string& Client::getType() {
-        return TYPE;
-    }
+    const string &Client::getType() { return TYPE; }
 
     void Client::die(const char *msg) {
         int err = errno;
@@ -41,7 +38,7 @@ namespace dyr {
         addr.sin_family = AF_INET;
         addr.sin_port = ntohs(1234);
         addr.sin_addr.s_addr = ntohl(INADDR_LOOPBACK);  // 127.0.0.1
-        int rv = connect(fd, (const struct sockaddr *) &addr, sizeof(addr));
+        int rv = connect(fd, (const struct sockaddr *)&addr, sizeof(addr));
         if (rv) {
             die("connect");
         }
@@ -60,5 +57,4 @@ namespace dyr {
     }
 
     Client::~Client() {}
-}
-
+}  // namespace dyr

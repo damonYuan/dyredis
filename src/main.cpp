@@ -1,21 +1,20 @@
-#include <iostream>
-#include "Config.h"
-#include "server/server.h"
-#include "client/client.h"
 #include <string.h>
+
+#include <iostream>
+
+#include "Config.h"
+#include "client/client.h"
+#include "server/server.h"
 
 using namespace dyr;
 
-int main(int argc, char* argv[])
-{
-    std::cout << " Version "
-              << DYR_VERSION_MAJOR
-              << "."
-              << DYR_VERSION_MINOR
+int main(int argc, char* argv[]) {
+    std::cout << " Version " << DYR_VERSION_MAJOR << "." << DYR_VERSION_MINOR
               << std::endl;
 
     if (argc != 2) {
-        std::cout << "Please specify an option: -c for client or -s for server" << std::endl;
+        std::cout << "Please specify an option: -c for client or -s for server"
+                  << std::endl;
         return 1;
     }
 

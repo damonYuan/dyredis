@@ -1,0 +1,10 @@
+BasedOnStyle: Google
+UseTab: Never
+IndentAccessModifiers: true
+IndentWidth: 4
+TabWidth: 4
+BraceWrapping:
+  AfterFunction: true
+  AfterClass: true
+  AfterControlStatement: true
+NamespaceIndentation: All

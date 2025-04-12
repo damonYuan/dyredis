@@ -1,13 +1,14 @@
+#include "server.h"
+
+#include <arpa/inet.h>
+#include <errno.h>
+#include <netinet/ip.h>
 #include <stdint.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <stdio.h>
-#include <errno.h>
-#include <unistd.h>
-#include <arpa/inet.h>
 #include <sys/socket.h>
-#include <netinet/ip.h>
-#include "server.h"
+#include <unistd.h>
 
 namespace dyr {
 
@@ -16,17 +17,11 @@ namespace dyr {
 
     Server::Server() = default;
 
-    const std::string& Server::getName() {
-        return NAME;
-    }
+    const std::string &Server::getName() { return NAME; }
 
-    const std::string& Server::getType() {
-        return TYPE;
-    }
+    const std::string &Server::getType() { return TYPE; }
 
-    void Server::msg(const char *msg) {
-        fprintf(stderr, "%s\n", msg);
-    }
+    void Server::msg(const char *msg) { fprintf(stderr, "%s\n", msg); }
 
     void Server::die(const char *msg) {
         int err = errno;
@@ -60,8 +55,8 @@ namespace dyr {
         struct sockaddr_in addr = {};
         addr.sin_family = AF_INET;
         addr.sin_port = ntohs(1234);
-        addr.sin_addr.s_addr = ntohl(0);    // wildcard address 0.0.0.0
-        int rv = bind(fd, (const sockaddr *) &addr, sizeof(addr));
+        addr.sin_addr.s_addr = ntohl(0);  // wildcard address 0.0.0.0
+        int rv = bind(fd, (const sockaddr *)&addr, sizeof(addr));
         if (rv) {
             die("bind()");
         }
@@ -76,9 +71,9 @@ namespace dyr {
             // accept
             struct sockaddr_in client_addr = {};
             socklen_t socklen = sizeof(client_addr);
-            int connfd = accept(fd, (struct sockaddr *) &client_addr, &socklen);
+            int connfd = accept(fd, (struct sockaddr *)&client_addr, &socklen);
             if (connfd < 0) {
-                continue;   // error
+                continue;  // error
             }
 
             doSomething(connfd);
@@ -89,5 +84,4 @@ namespace dyr {
     }
 
     Server::~Server() {}
-}
-
+}  // namespace dyr
