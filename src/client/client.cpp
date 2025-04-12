@@ -38,6 +38,10 @@ namespace dyr {
         addr.sin_family = AF_INET;
         addr.sin_port = ntohs(1234);
         addr.sin_addr.s_addr = ntohl(INADDR_LOOPBACK);  // 127.0.0.1
+        // bind() can also be used on the client socket before connect() to specify the source address. 
+        // Without this, the OS will automatically select a source address. 
+        // This is useful for selecting a particular source address if multiple ones are available. 
+        // If the port in bind() is zero, the OS will automatically pick a port.
         int rv = connect(fd, (const struct sockaddr *)&addr, sizeof(addr));
         if (rv) {
             die("connect");
