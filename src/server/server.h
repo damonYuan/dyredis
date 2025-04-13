@@ -17,10 +17,6 @@ namespace dyr {
             static const std::string TYPE;
             static const std::string NAME;
 
-            static void msg(const char *msg);
-
-            static void die(const char *msg);
-
             void doSomething(int connfd);
     };
 }  // namespace dyr

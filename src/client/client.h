@@ -10,7 +10,7 @@ namespace dyr {
             [[nodiscard]] static const std::string &getName();
             [[nodiscard]] static const std::string &getType();
 
-            static int send();
+            int send();
 
             ~Client();
 
@@ -18,6 +18,6 @@ namespace dyr {
             static const string TYPE;
             static const string NAME;
 
-            static void die(const char *msg);
+            int32_t query(int fd, const char *text);
     };
 }  // namespace dyr

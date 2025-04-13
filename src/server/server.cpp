@@ -1,5 +1,6 @@
 #include "server.h"
 
+#include <assert.h>
 #include <arpa/inet.h>
 #include <errno.h>
 #include <netinet/ip.h>
@@ -9,6 +10,7 @@
 #include <string.h>
 #include <sys/socket.h>
 #include <unistd.h>
+#include "common/common.h"
 
 namespace dyr {
 
@@ -20,14 +22,6 @@ namespace dyr {
     const std::string &Server::getName() { return NAME; }
 
     const std::string &Server::getType() { return TYPE; }
-
-    void Server::msg(const char *msg) { fprintf(stderr, "%s\n", msg); }
-
-    void Server::die(const char *msg) {
-        int err = errno;
-        fprintf(stderr, "[%d] %s\n", err, msg);
-        abort();
-    }
 
     void Server::doSomething(int connfd) {
         char rbuf[64] = {};
