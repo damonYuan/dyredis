@@ -1,4 +1,3 @@
-set(COMMON_LIB_NAME dyr_common)
 file(GLOB_RECURSE SOURCES LIST_DIRECTORIES true *.h *.cpp)
 set(SOURCES ${SOURCES})
-add_library(${COMMON_LIB_NAME}_lib STATIC ${SOURCES})
+add_library(dyr_common_lib STATIC ${SOURCES})
