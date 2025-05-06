@@ -48,4 +48,5 @@ cd build/test
 
 1. using the [libev](https://github.com/enki/libev)
 2. integrate with boost [std::string to lowercase or uppercase in C++](https://raymii.org/s/snippets/std_string_to_lowercase_or_uppercase_in_cpp.html)
+3. dynamic libs
 
