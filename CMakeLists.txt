@@ -16,8 +16,8 @@ set(CMAKE_CXX_COMPILER "clang++")
 # # https://stackoverflow.com/questions/47697761/cmake-run-time-error-dyld-library-not-loaded-for-dynamically-linked-resource
 # set(CMAKE_INSTALL_RPATH_USE_LINK_PATH ON)
 
-add_library(tutorial_compiler_flags INTERFACE)
-target_compile_features(tutorial_compiler_flags INTERFACE cxx_std_20)
+add_library(dyredis_compiler_flags INTERFACE)
+target_compile_features(dyredis_compiler_flags INTERFACE cxx_std_20)
 
 project(dyredis)
 

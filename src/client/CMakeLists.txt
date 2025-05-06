@@ -1,3 +1,3 @@
 add_library(dyr_client_lib STATIC client.cpp)
-target_link_libraries(dyr_client_lib PUBLIC dyr_common_lib)
+target_link_libraries(dyr_client_lib PUBLIC dyr_common_lib dyredis_compiler_flags)
 target_include_directories(dyr_client_lib PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
