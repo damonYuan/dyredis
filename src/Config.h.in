@@ -1,4 +1,4 @@
 #pragma once
 
-#define DYR_VERSION_MAJOR @dyr_VERSION_MAJOR@
-#define DYR_VERSION_MINOR @dyr_VERSION_MINOR@
+#define dyr_VERSION_MAJOR @dyr_VERSION_MAJOR@
+#define dyr_VERSION_MINOR @dyr_VERSION_MINOR@

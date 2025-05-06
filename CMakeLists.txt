@@ -6,15 +6,18 @@ set(CMAKE_C_COMPILER "clang")
 # Set the C++ compiler to Clang
 set(CMAKE_CXX_COMPILER "clang++")
 
-# Set the desired compiler flags
-set(CMAKE_C_FLAGS "-Wall -Wextra -Og -g")
-set(CMAKE_CXX_FLAGS "-Wall -Wextra -Og -g")
+# # Set the desired compiler flags
+# set(CMAKE_C_FLAGS "-Wall -Wextra -Og -g")
+# set(CMAKE_CXX_FLAGS "-Wall -Wextra -Og -g")
 
-# Set the C++ standard to C++20
-set(CMAKE_CXX_STANDARD 20)
+# # Set the C++ standard to C++20
+# set(CMAKE_CXX_STANDARD 20)
 
-# https://stackoverflow.com/questions/47697761/cmake-run-time-error-dyld-library-not-loaded-for-dynamically-linked-resource
-set(CMAKE_INSTALL_RPATH_USE_LINK_PATH ON)
+# # https://stackoverflow.com/questions/47697761/cmake-run-time-error-dyld-library-not-loaded-for-dynamically-linked-resource
+# set(CMAKE_INSTALL_RPATH_USE_LINK_PATH ON)
+
+add_library(tutorial_compiler_flags INTERFACE)
+target_compile_features(tutorial_compiler_flags INTERFACE cxx_std_20)
 
 project(dyredis)
 

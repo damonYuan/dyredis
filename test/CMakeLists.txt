@@ -1,13 +1,6 @@
-set(MAIN_TEST_PROJECT_NAME dyr_test)
-file(GLOB_RECURSE TEST_SOURCES LIST_DIRECTORIES false *.h *.cpp)
-set(SOURCES ${TEST_SOURCES})
-
-add_executable(${MAIN_TEST_PROJECT_NAME} ${TEST_SOURCES})
-add_test(NAME ${MAIN_TEST_PROJECT_NAME} COMMAND ${MAIN_TEST_PROJECT_NAME})
-target_link_libraries(${MAIN_TEST_PROJECT_NAME} PUBLIC dyr_server_lib dyr_client_lib gtest)
-
-list(APPEND EXTRA_INCLUDES "${PROJECT_SOURCE_DIR}/src/client")
-list(APPEND EXTRA_INCLUDES "${PROJECT_SOURCE_DIR}/src/server")
-target_include_directories(${MAIN_TEST_PROJECT_NAME} PRIVATE ${PROJECT_BINARY_DIR} ${EXTRA_INCLUDES})
+add_executable(dyr_test main.cpp main_test.cpp server_test.cpp client_test.cpp)
+add_test(NAME dyr_test COMMAND dyr_test)
+target_link_libraries(dyr_test PUBLIC dyr_server_lib dyr_client_lib gtest tutorial_compiler_flags)
+target_include_directories(dyr_test PRIVATE ${PROJECT_BINARY_DIR})
 
 

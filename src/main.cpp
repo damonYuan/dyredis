@@ -9,7 +9,7 @@
 using namespace dyr;
 
 int main(int argc, char* argv[]) {
-    std::cout << " Version " << DYR_VERSION_MAJOR << "." << DYR_VERSION_MINOR
+    std::cout << " Version " << dyr_VERSION_MAJOR << "." << dyr_VERSION_MINOR
               << std::endl;
 
     if (argc != 2) {
