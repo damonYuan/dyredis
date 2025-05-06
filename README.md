@@ -40,8 +40,8 @@ dyr
 [googletest](https://github.com/google/googletest) is used following [C++ project setup with CMake & unit tests (google test)](https://raymii.org/s/tutorials/Cpp_project_setup_with_cmake_and_unit_tests.html).
 ```
 cmake -S . -B build; cmake --build build --target test
-cd build
-ctest
+cd build/test
+./dyr_test
 ```
 
 # TODO
