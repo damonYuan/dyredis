@@ -17,6 +17,6 @@ namespace dyr {
             static const std::string TYPE;
             static const std::string NAME;
 
-            void doSomething(int connfd);
+            void read_write_blocking(int connfd);
     };
 }  // namespace dyr

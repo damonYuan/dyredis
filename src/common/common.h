@@ -4,12 +4,14 @@
 #include <vector>
 
 namespace dyr {
-    static const size_t k_max_msg = 4096;
+    static const size_t k_max_msg = 32 << 20;;
 
-    int32_t read_full(int fd, char *buf, size_t n);
-    int32_t write_all(int fd, const char *buf, size_t n);
+    int32_t read_full(int fd, uint8_t *buf, size_t n);
+    int32_t write_all(int fd, const uint8_t *buf, size_t n);
     void msg(const char *msg);
+    void msg_errno(const char *msg);
     void die(const char *msg);
+    void buf_append(std::vector<uint8_t> &buf, const uint8_t *data, size_t len);
 
     struct Conn {
         int fd = -1;
