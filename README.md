@@ -72,4 +72,4 @@ cd build/test
 4. how to debug using gdb
 5. [how to debug in vscode](Configure C/C++ debugging)
 6. how to link to SHARED lib
-7. automate the google test
+7. automate the google test and integrate it with CDash
