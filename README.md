@@ -49,7 +49,8 @@ or
 cmake -S . -B build -DCMAKE_BUILD_TYPE=Debug -G "Unix Makefiles"
 cmake --build build --clean-first
 cmake --build build --target test
-cmake --install build --prefix ~/cbin
+cmake --install build --config Debug --prefix ~/cbin
+cmake --install build --config Release --prefix ~/cbin
 // or you can find the binary in build folder
 dyr
 ```
@@ -69,3 +70,4 @@ cd build/test
 3. dynamic libs
 4. how to debug using gdb
 5. [how to debug in vscode](Configure C/C++ debugging)
+6. how to link to SHARED lib

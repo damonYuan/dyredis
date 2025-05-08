@@ -1,5 +1,5 @@
 project(dyr VERSION 1.0)
-configure_file(Config.h.in Config.h)
+configure_file(config.h.in config.h)
 
 add_subdirectory(common)
 add_subdirectory(client)
@@ -10,3 +10,4 @@ target_link_libraries(dyr PUBLIC dyr_client_lib dyr_server_lib dyredis_compiler_
 target_include_directories(dyr PUBLIC ${CMAKE_CURRENT_BINARY_DIR})
 
 install(TARGETS dyr DESTINATION bin)
+install(FILES "${PROJECT_BINARY_DIR}/config.h" DESTINATION include)

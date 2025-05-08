@@ -2,7 +2,7 @@
 
 #include <iostream>
 
-#include "Config.h"
+#include "config.h"
 #include "client/client.h"
 #include "server/server.h"
 
