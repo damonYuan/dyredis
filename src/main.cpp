@@ -25,7 +25,7 @@ int main(int argc, char* argv[]) {
     } else if (argc == 2 && strcmp(argv[1], "-c") == 0) {
         std::cout << "Starting the client..." << std::endl;
         Client client;
-        return client.send();
+        return client.send(argc, argv);
     } else {
         std::cout << "Unknown options" << std::endl;
         return 1;
