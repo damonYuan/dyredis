@@ -28,6 +28,8 @@ target_compile_options(dyredis_compiler_flags INTERFACE
 
 project(dyredis)
 
+enable_testing()
+
 add_subdirectory(src)
 add_subdirectory(test)
 add_subdirectory(lib/googletest)

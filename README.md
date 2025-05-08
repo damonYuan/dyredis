@@ -47,6 +47,7 @@ cmake -S . -B build; cmake --build build --clean-first; cmake --build build --ta
 or
 ```
 cmake -S . -B build -DCMAKE_BUILD_TYPE=Debug -G "Unix Makefiles"
+cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -G "Unix Makefiles"
 cmake --build build --clean-first
 cmake --build build --target test
 cmake --install build --config Debug --prefix ~/cbin
@@ -71,3 +72,4 @@ cd build/test
 4. how to debug using gdb
 5. [how to debug in vscode](Configure C/C++ debugging)
 6. how to link to SHARED lib
+7. automate the google test
