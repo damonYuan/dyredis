@@ -44,7 +44,9 @@ README
 ## Build Commands
 
 ```
-cmake -S . -B build; cmake --build build --clean-first; cmake --build build --target test
+cmake -S . -B build; cmake --build build --clean-first
+cmake -S . -B build -DBUILD_SHARED_LIBS=ON; cmake --build build --clean-first
+cmake -S . -B build; cmake --build build --target test
 ```
 or
 ```

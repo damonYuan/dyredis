@@ -5,6 +5,13 @@ add_subdirectory(common)
 add_subdirectory(client)
 add_subdirectory(server)
 
+option(BUILD_SHARED_LIBS "Build using shared libraries" OFF)
+if (BUILD_SHARED_LIBS)
+  set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}")
+  set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}")
+  set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}")  
+endif()
+
 add_executable(dyr main.cpp)
 target_link_libraries(dyr PUBLIC dyr_client_lib dyr_server_lib dyredis_compiler_flags)
 target_include_directories(dyr PUBLIC ${CMAKE_CURRENT_BINARY_DIR})
