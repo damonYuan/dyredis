@@ -78,10 +78,9 @@ cd build; cpack --config CPackSourceConfig.cmake
 
 ## TODO
 
-1. using the [libev](https://github.com/enki/libev)
-2. integrate with boost [std::string to lowercase or uppercase in C++](https://raymii.org/s/snippets/std_string_to_lowercase_or_uppercase_in_cpp.html)
-3. dynamic libs
-4. how to debug using gdb
-5. [how to debug in vscode](Configure C/C++ debugging)
-6. how to link to SHARED lib
-7. automate the google test and integrate it with CDash
+1. [ ] using the [libev](https://github.com/enki/libev)
+2. [ ] integrate with boost [std::string to lowercase or uppercase in C++](https://raymii.org/s/snippets/std_string_to_lowercase_or_uppercase_in_cpp.html)
+3. [x] dynamic libs
+4. [ ] how to debug using gdb
+5. [ ] [how to debug in vscode](Configure C/C++ debugging)
+6. [ ] automate the google test and integrate it with CDash
