@@ -3,7 +3,7 @@ README
 
 [Build Your Own Redis with C/C++](https://build-your-own.org/redis/)
 
-# Project Structure
+## Project Structure
 
 ```
 .
@@ -41,7 +41,7 @@ README
     └── server_test.cpp
 ```
 
-# Build Commands
+## Build Commands
 
 ```
 cmake -S . -B build; cmake --build build --clean-first; cmake --build build --target test
@@ -58,7 +58,7 @@ cmake --install build --config Release --prefix ~/cbin
 dyr
 ```
 
-# Test
+## Test
 [googletest](https://github.com/google/googletest) is used following [C++ project setup with CMake & unit tests (google test)](https://raymii.org/s/tutorials/Cpp_project_setup_with_cmake_and_unit_tests.html).
 ```
 cmake -S . -B build; cmake --build build --target test
@@ -66,7 +66,15 @@ cd build/test
 ./dyr_test
 ```
 
-# TODO
+## Packaging an Installer
+
+```
+cd build; cpack
+cd build; cpack -G ZIP -C Debug
+cd build; cpack --config CPackSourceConfig.cmake
+```
+
+## TODO
 
 1. using the [libev](https://github.com/enki/libev)
 2. integrate with boost [std::string to lowercase or uppercase in C++](https://raymii.org/s/snippets/std_string_to_lowercase_or_uppercase_in_cpp.html)
